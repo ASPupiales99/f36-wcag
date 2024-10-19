@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submit on Dropdown Selection</title>
+</head>
+<body>
+    <form id="myForm" action="submit_page.html" method="POST"></form>
+        <label for="options">Choose an option:</label>
+        <select id="options" name="options">
+            <option value="">Select an option</option>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+        </select>
+    </form>
+
+    <script>
+        // Select the dropdown menu
+        const dropdown = document.getElementById('options');
+        const form = document.getElementById('myForm');
+
+        // Add an event listener to submit the form when an option is selected
+        dropdown.addEventListener('change', () => {
+            if (dropdown.value !== "") { // Ensure an option is selected
+                form.submit();
+            }
+        });
+    </script>
+</body>
+</html>
